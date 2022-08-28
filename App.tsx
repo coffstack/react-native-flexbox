@@ -1,20 +1,46 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StyleSheet, View } from "react-native";
+import { Background } from "./Background";
+
+function YellowBox() {
+  return <View style={[styles.box, { backgroundColor: "yellow" }]} />;
+}
+
+function BlueBox() {
+  return <View style={[styles.box, { backgroundColor: "blue" }]} />;
+}
+
+function PinkBox() {
+  return <View style={[styles.box, { backgroundColor: "green" }]} />;
+}
+
+function PurpleBox() {
+  return <View style={[styles.box, { backgroundColor: "purple" }]} />;
+}
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Background>
+      <View style={styles.container}>
+        <YellowBox />
+        <BlueBox />
+        <PinkBox />
+        <PurpleBox />
+      </View>
+    </Background>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // backgroundColor: "#CCC",
+    // opacity: 0.5,
+  },
+  box: {
+    width: 100,
+    height: 100,
+    backgroundColor: "yellow",
+    opacity: 0.6,
   },
 });
