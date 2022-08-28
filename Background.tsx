@@ -10,7 +10,7 @@ function heightPoints() {
   for (let i = 0; i <= SCREEN_HEIGHT; i = i + 50) {
     const color = i === 0 ? "transparent" : "black";
     components.push(
-      <View style={{ position: "absolute", top: i }}>
+      <View key={i} style={{ position: "absolute", top: i }}>
         <View style={{ width: 10, height: 1, backgroundColor: color }} />
         <Text style={{ fontSize: 12, color, marginLeft: 10 }}>{i}</Text>
       </View>
@@ -23,7 +23,7 @@ function widthPoints() {
   for (let i = 0; i <= SCREEN_HEIGHT; i = i + 50) {
     const color = i === 0 ? "transparent" : "black";
     components.push(
-      <View style={{ position: "absolute", left: i }}>
+      <View key={i} style={{ position: "absolute", left: i }}>
         <View style={{ width: 1, height: 10, backgroundColor: color }} />
         <Text style={{ fontSize: 12, color }}>{i}</Text>
       </View>
@@ -51,10 +51,6 @@ export function Background({ children }) {
             height: SCREEN_HEIGHT,
           }}
         />
-        <View>
-          {heightPoints().map((component) => component)}
-          {widthPoints().map((component) => component)}
-        </View>
         <View
           style={{
             position: "absolute",
@@ -63,6 +59,11 @@ export function Background({ children }) {
             height: 10,
           }}
         />
+        <View>
+          {heightPoints().map((component) => component)}
+          {widthPoints().map((component) => component)}
+        </View>
+
         {children}
       </View>
     </SafeAreaView>

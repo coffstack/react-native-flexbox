@@ -10,12 +10,8 @@ function BlueBox() {
   return <View style={[styles.box, { backgroundColor: "blue" }]} />;
 }
 
-function PinkBox() {
+function GreenBox() {
   return <View style={[styles.box, { backgroundColor: "green" }]} />;
-}
-
-function PurpleBox() {
-  return <View style={[styles.box, { backgroundColor: "purple" }]} />;
 }
 
 export default function App() {
@@ -24,8 +20,7 @@ export default function App() {
       <View style={styles.container}>
         <YellowBox />
         <BlueBox />
-        <PinkBox />
-        <PurpleBox />
+        <GreenBox />
       </View>
     </Background>
   );
@@ -34,13 +29,10 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: "#CCC",
-    // opacity: 0.5,
   },
   box: {
     width: 100,
     height: 100,
-    backgroundColor: "yellow",
     opacity: 0.6,
   },
 });
